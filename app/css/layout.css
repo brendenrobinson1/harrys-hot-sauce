@@ -1,0 +1,626 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #2e2e2e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+#wrapper {
+  width: 960px;
+  height: auto;
+  background-color: #000000;
+  margin: 0 auto;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  height: 200px;
+  float: left;
+  background-image: url(../images/headerBG.jpg);
+  background-repeat: repeat-x;
+  background-size: 120%;
+}
+
+#logo {
+  width: 306px;
+  height: 127px;
+  float: left;
+  padding: 36px 0 4px 26px;
+}
+
+#about {
+  width: 940px;
+  height: 138px;
+  float: left;
+  background-image: url(../images/aboutBG.jpg);
+  background-repeat: no-repeat;
+  padding: 28px 10px 0 10px;
+}
+
+#body-wrapper {
+  width: 940px;
+  float: left;
+  background-color: #ffffff;
+  padding: 10px;
+  overflow: hidden;
+}
+
+footer {
+  width: 960px;
+  height: 57px;
+  float: left;
+  background-image: url(../images/footerBG.jpg);
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+#copyright {
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 200px;
+  height: 28px;
+  line-height: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  font-size: 14px;
+}
+
+#sources {
+  display: inline-block;
+  margin: 0 auto;
+  width: 200px;
+  height: 28px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  font-size: 14px;
+}
+
+#company-name {
+  float: right;
+  width: 200px;
+  height: 28px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  font-size: 14px;
+}
+
+.item-wrapper {
+  width: 190px;
+  float: left;
+  margin: 15px;
+  background-color: #000000;
+  position: relative;
+}
+
+.product-name {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 56px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #3c0000;
+  text-align: center;
+  overflow: hidden;
+}
+
+.limited-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #c62828;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.product-image img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid #3c0000;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.product-description {
+  width: 100%;
+  box-sizing: border-box;
+  height: 95px;
+  padding: 10px 5px;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  color: #ffffff;
+  background-color: #3c0000;
+  font-size: 14px;
+  line-height: 1.3;
+  overflow: hidden;
+}
+
+.product-extra {
+  width: 100%;
+  float: left;
+}
+
+.inventory {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 34px;
+  padding: 0;
+  text-align: center;
+  background: transparent;
+}
+
+.stock-badge {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 34px;
+  line-height: 34px;
+  padding: 0 5px;
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+}
+
+.in-stock {
+  background: #ff5f00;
+}
+
+.low-stock {
+  background: #ffd54f;
+}
+
+.out-stock {
+  background: #ff8a65;
+}
+
+.price {
+  width: 100%;
+  box-sizing: border-box;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 5px;
+  font-size: 16px;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #3c0000;
+  text-align: center;
+}
+
+.quantity-wrapper {
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.quantity-select,
+.quantity-input {
+  width: 95px;
+  padding: 6px;
+  font-size: 14px;
+  margin: 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+}
+
+.button-wrapper {
+  width: 100%;
+  float: left;
+}
+
+.unavailable {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 42px;
+  line-height: 42px;
+  padding: 0;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  background: #ffa600;
+}
+
+.test {
+  width: 100%;
+  box-sizing: border-box;
+  height: 42px;
+  padding: 0;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  background: #ffa600;
+  border: none;
+  cursor: pointer;
+}
+
+.test:hover {
+  color: #3c0000;
+  background: #ff5f00;
+}
+
+.success-msg {
+  width: 100%;
+  box-sizing: border-box;
+  background: #2e7d32;
+  color: #ffffff;
+  padding: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.error-msg {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffe0e0;
+  color: #8b0000;
+  border: 1px solid #d8a0a0;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.product-controls {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-toggle-bar {
+  margin-bottom: 10px;
+}
+
+.product-toggle-bar strong {
+  margin-right: 8px;
+  color: #3c0000;
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.product-toggle-bar a,
+.pagination a,
+.pagination span {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 8px 14px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  color: #222;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  background: #f5f5f5;
+  font-family: Gotham, Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.product-toggle-bar a:hover,
+.pagination a:hover {
+  background: #e9e9e9;
+}
+
+.product-toggle-bar a.active-toggle,
+.pagination .current-page {
+  background: #c62828;
+  color: #ffffff;
+  border-color: #c62828;
+}
+
+.product-count-message {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #3c0000;
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.product-limit-select,
+.product-sort-select {
+  margin-bottom: 15px;
+}
+
+.product-limit-select select,
+.product-sort-select select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.pagination {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  clear: both;
+}
+
+.pagination a.arrow {
+  font-weight: bold;
+}
+
+nav {
+  width: 560px;
+  height: auto;
+  float: left;
+  font-size: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 110px;
+  position: relative;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  text-align: center;
+  width: 110px;
+  font-size: 20px;
+}
+
+nav ul li.active a {
+  color: #ffa401;
+}
+
+nav ul li a,
+nav ul li a:visited {
+  color: #ffffff;
+  display: block;
+  padding: 9px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #ffa401;
+  text-decoration: none;
+}
+
+nav .second-level {
+  display: none;
+  position: absolute;
+  background-color: #3d0101;
+  min-width: 116px;
+  margin-left: 4px;
+  padding: 5px;
+  border-left: 1px solid #c83722;
+  border-right: 1px solid #c83722;
+  border-bottom: 1px solid #c83722;
+}
+
+nav ul li:hover .second-level {
+  display: block;
+}
+
+nav .second-level li {
+  display: block;
+  text-align: left;
+  width: 136px;
+}
+
+nav ul .second-level li a,
+nav ul .second-level li a:visited {
+  color: #ffffff;
+}
+
+nav ul .second-level li a:hover {
+  color: #ffa401;
+}
+
+.titles {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 42px;
+  font-weight: bold;
+  color: #c83722;
+}
+
+.label-wrapper {
+  width: 400px;
+  height: 70px;
+  margin: 0 auto 10px auto;
+  color: #3c0000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.submit-reset {
+  width: 150px;
+  height: 35px;
+  margin-left: 49px;
+  margin-right: 33px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #3c0000;
+  font-weight: bold;
+  background: #ffa600;
+}
+
+#register-wrapper {
+  width: 500px;
+  height: auto;
+  margin: 30px auto 50px auto;
+  padding: 30px 10px 10px 10px;
+  border-radius: 10px;
+  background-color: #ffa401;
+}
+
+input[type=text],
+input[type=password] {
+  height: 28px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
+  margin-top: 5px;
+  color: #3c0000;
+}
+
+input[type=number] {
+  color: #3c0000;
+}
+
+#cart-search {
+  width: 422px;
+  height: auto;
+  float: left;
+  margin-top: 66px;
+  margin-right: 0;
+  margin-left: 206px;
+  margin-bottom: 22px;
+}
+
+#cart {
+  width: 167px;
+  height: 27px;
+  float: left;
+  margin-left: 19px;
+  padding: 5px 0 0 0;
+  background-color: #8f5848;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.displayname {
+  display: inline-block;
+  width: 158px;
+  font-size: 22px;
+  color: #ffffff;
+  text-align: right;
+  padding-bottom: 2px;
+}
+
+#login,
+#login:hover,
+#logout,
+#logout:hover {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  background-repeat: no-repeat;
+}
+
+#login {
+  background-image: url(../images/signIn.jpg);
+}
+
+#login:hover {
+  background-image: url(../images/signInHover.jpg);
+}
+
+#logout {
+  background-image: url(../images/logout.jpg);
+}
+
+#logout:hover {
+  background-image: url(../images/logoutHover.jpg);
+}
+
+.removeItem {
+  width: 128px;
+  height: 40px;
+  padding: 5px 5px 5px 0;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  background: #ffa600;
+}
+
+.updateItem {
+  width: 133px;
+  height: 40px;
+  padding: 5px 5px 5px 0;
+  font-family: Gotham, Helvetica Neue, Helvetica, "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  background: #ffa600;
+}
+
+.removeItem:hover,
+.updateItem:hover {
+  color: #3c0000;
+  background: #ff5f00;
+}
+
+select#combo {
+  max-width: 431px;
+  min-width: 431px;
+  width: 431px;
+  height: 43px;
+}
+
+.full-line {
+  clear: both;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #999;
+  margin: 10px 0;
+}
+
+/* Safety override: keeps product cards flat even if cached/duplicate hover CSS exists */
+.item-wrapper:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.item-wrapper:hover img,
+.item-wrapper:hover .product-image img {
+  transform: none !important;
+}

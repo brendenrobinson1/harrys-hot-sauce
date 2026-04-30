@@ -1,0 +1,346 @@
+CREATE TABLE HARRYS.Accounts(Account_id int NOT NULL AUTO_INCREMENT,
+                                        Account_lastname varchar(240) NOT NULL,
+                                        Account_firstname varchar(240) NOT NULL,
+                                        Account_middlename varchar(240) NOT NULL,
+                                        Account_name_suffix varchar(240),
+                                        Account_altname varchar(240) NOT NULL,
+                                        Account_address1 varchar(240) NOT NULL,
+                                        Account_address2 varchar(240),
+                                        Account_city varchar(240) NOT NULL,
+                                        Account_state_region varchar(240) NOT NULL,
+                                        Account_postal_code int NOT NULL,
+                                        Account_country varchar(240) NOT NULL,
+                                        Account_type_id int NOT NULL,
+                                        Account_status varchar(240),
+                                        Account_email_address varchar(240) NOT NULL,
+                                        Account_send_email_yn varchar(240) NOT NULL,
+                                        Account_salutation varchar(240) NOT NULL,
+                                        Account_phone_number int NOT NULL,
+                                        Account_fax_number int,
+                                        Account_text_number int,
+                                        Account_send_text_yn varchar(240) NOT NULL,
+                                        Account_created_date datetime NOT NULL,
+                                        Account_created_by varchar(240) NOT NULL,
+                                        Account_last_update_date datetime,
+                                        Account_last_update_by varchar(240),
+                                        PRIMARY KEY ( Account_id )
+                                       );
+
+
+CREATE TABLE HARRYS.Vendor(Vendor_id int NOT NULL AUTO_INCREMENT,
+                                        Vendor_company_name varchar(240) NOT NULL,
+                                        Vendor_contact_name varchar(240) NOT NULL,
+                                        Vendor_contact_title varchar(240) NOT NULL,
+                                        Vendor_account_id int NOT NULL,
+                                        Vendor_credit_rating int NOT NULL,
+                                        Vendor_created_date date NOT NULL,
+                                        Vendor_created_by varchar(240) NOT NULL,
+                                        Vendor_last_updated_date datetime,
+                                        Vendor_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Vendor_id )
+                                       );
+
+
+CREATE TABLE HARRYS.Shopping_cart(SC_id int NOT NULL AUTO_INCREMENT,
+                                        SC_account_id int NOT NULL,
+                                        SC_inventory_id int NOT NULL,
+                                        SC_order_quantity int NOT NULL,
+                                        SC_unit_price dec(10,2) NOT NULL,
+                                        SC_discount_percentage dec(10,2) NOT NULL,
+                                        SC_discount_amount dec(10,2) NOT NULL,
+                                        SC_created_date datetime NOT NULL,
+                                        SC_created_by varchar(240) NOT NULL,
+                                        SC_last_updated_date datetime,
+                                        SC_last_updated_by varchar(240),
+                                        PRIMARY KEY ( SC_id )
+                                       );
+
+
+ CREATE TABLE HARRYS.Shipping(Shipping_id int NOT NULL AUTO_INCREMENT,
+                                        Shipping_order_details_id int NOT NULL,
+                                        Shipping_shipped_date datetime NOT NULL,
+                                        Shipping_tracking_number varchar(240) NOT NULL,
+                                        Shipping_shipped_quantity int NOT NULL,
+                                        Shipping_method varchar(240) NOT NULL,
+                                        Shipping_freight_costs dec(10,2) NOT NULL,
+                                        Shipping_handling_costs dec(10,2) NOT NULL,
+                                        Shipping_created_date datetime NOT NULL,
+                                        Shipping_created_by varchar(240) NOT NULL,
+                                        Shipping_last_updated_date datetime,
+                                        Shipping_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Shipping_id )
+                                       );
+
+
+
+CREATE TABLE HARRYS.Products(Products_id int NOT NULL AUTO_INCREMENT,
+                                        Products_image varchar(240),
+                                        Products_name varchar(240) NOT NULL,
+                                        Products_item_number int NOT NULL,
+                                        Products_display_name varchar(240),
+                                        Products_unit_price dec(10,2) NOT NULL,
+                                        Products_discounted_unit_price dec(10,2) NOT NULL,
+                                        Products_quantity_per_unit int NOT NULL,
+                                        Products_image_id int NOT NULL,
+                                        Products_description varchar(2000) NOT NULL,
+                                        Products_status varchar(240),
+                                        Products_start_date datetime,
+                                        Products_end_date datetime,
+                                        Products_notes varchar(240),
+                                        Products_created_date datetime NOT NULL,
+                                        Products_create_by varchar(240) NOT NULL,
+                                        Products_last_updated_date datetime,
+                                        Products_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Products_id )
+                                       );
+
+
+CREATE TABLE HARRYS.Privileges(Privileges_id int NOT NULL AUTO_INCREMENT,
+                                        Privileges_name varchar(240) NOT NULL,
+                                        Privileges_start_date datetime,
+                                        Privileges_end_date datetime,
+                                        Privileges_status varchar(240) NOT NULL,
+                                        Privileges_created_date datetime NOT NULL,
+                                        Privileges_created_by varchar(240) NOT NULL,
+                                        Privileges_last_updated_date datetime,
+                                        Privileges_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Privileges_id )
+                                       );
+
+
+CREATE TABLE HARRYS.Payment_method(PM_id int NOT NULL AUTO_INCREMENT,
+                                        PM_type varchar(240) NOT NULL,
+                                        PM_number varchar(240) NOT NULL,
+                                        PM_card_security_code int NOT NULL,
+                                        PM_exp_date datetime NOT NULL,
+                                        PM_account_id int NOT NULL,
+                                        PM_start_date datetime NOT NULL,
+                                        PM_end_date datetime NOT NULL,
+                                        PM_created_date datetime NOT NULL,
+                                        PM_created_by varchar(240) NOT NULL,
+                                        PM_last_updated_date datetime,
+                                        PM_last_updated_by varchar(240),
+                                        PRIMARY KEY ( PM_id )
+                                       );
+
+
+CREATE TABLE HARRYS.Order_status(OS_id int NOT NULL AUTO_INCREMENT,
+                                        OS_name varchar(240) NOT NULL,
+                                        OS_description varchar(240) NOT NULL,
+                                        OS_start_date datetime,
+                                        OS_end_date datetime,
+                                        OS_created_date datetime NOT NULL,
+                                        OS_created_by varchar(240) NOT NULL,
+                                        OS_last_updated_date datetime,
+                                        OS_last_updated_by varchar(240),
+                                        PRIMARY KEY ( OS_id )
+                                       );
+
+
+CREATE TABLE HARRYS.Order_headers(Order_header_id int NOT NULL AUTO_INCREMENT,
+                                        Order_header_number int NOT NULL,
+                                        Order_header_orderdate datetime NOT NULL,
+                                        Order_header_salesperson_id int NOT NULL,
+                                        Order_header_account_id int NOT NULL,
+                                        Order_header_status_id int NOT NULL,
+                                        Order_header_discount_percentage dec(10,2) NOT NULL,
+                                        Order_header_discount_amount dec(10,2) NOT NULL,
+                                        Order_header_pm_id int NOT NULL,
+                                        Order_header_created_date datetime NOT NULL,
+                                        Order_header_created_by varchar(240) NOT NULL,
+                                        Order_header_last_updated_date datetime,
+                                        Order_header_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Order_header_id )
+                                       );
+
+
+ CREATE TABLE HARRYS.Order_details(Order_details_id int NOT NULL AUTO_INCREMENT,
+                                        Order_details_header_id int NOT NULL,
+                                        Order_details_line_number int NOT NULL,
+                                        Order_details_date datetime NOT NULL,
+                                        Order_details_inventory_id int NOT NULL,
+                                        Order_details_ordered_quantity int NOT NULL,
+                                        Order_details_cancelled_quantity int NOT NULL,
+                                        Order_details_unit_price dec(10,2) NOT NULL,
+                                        Order_details_discount_percentage dec(10,2) NOT NULL,
+                                        Order_details_discount_amount dec(10,2) NOT NULL,
+                                        Order_details_created_date datetime NOT NULL,
+                                        Order_details_created_by varchar(240) NOT NULL,
+                                        Order_details_last_updated_date datetime,
+                                        Order_details_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Order_details_id )
+                                       );
+
+
+ CREATE TABLE HARRYS.LoginLog(LoginLog_id int NOT NULL AUTO_INCREMENT,
+                                        LoginLog_login_username varchar(240) NOT NULL,
+                                        LoginLog_login_password varchar(240) NOT NULL,
+                                        LoginLog_login_id int NOT NULL,
+                                        LoginLog_login_date datetime,
+                                        LoginLog_logout_date datetime,
+                                        PRIMARY KEY ( LoginLog_id )
+                                       );
+
+
+CREATE TABLE HARRYS.Login(Login_id int NOT NULL AUTO_INCREMENT,
+                                        Login_username varchar(240) NOT NULL,
+                                        Login_password varchar(240) NOT NULL,
+                                        Login_end_date datetime,
+                                        Login_status varchar(240),
+                                        Login_employee_id int NOT NULL,
+                                        Login_account_id int NOT NULL,
+                                        Login_last_login_date datetime,
+                                        Login_created_date datetime NOT NULL,
+                                        Login_created_by varchar(240) NOT NULL,
+                                        Login_last_update_date datetime,
+                                        Login_last_update_by varchar(240),
+                                        PRIMARY KEY ( Login_id )
+                                       );
+
+
+ CREATE TABLE HARRYS.Invoice(Invoice_id int NOT NULL AUTO_INCREMENT,
+                                        Invoice_number int NOT NULL,
+                                        Invoice_date datetime NOT NULL,
+                                        Invoice_shipped_id int NOT NULL,
+                                        Invoice_created_date datetime NOT NULL,
+                                        Invoice_created_by varchar(240) NOT NULL,
+                                        Invoice_last_updated_date datetime,
+                                        Invoice_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Invoice_id )
+                                       );
+
+
+ CREATE TABLE HARRYS.Inventory(Inventory_id int NOT NULL AUTO_INCREMENT,
+                                        Inventory_product_id int NOT NULL,
+                                        Inventory_units_in_stock int NOT NULL,
+                                        Inventory_units_on_order int NOT NULL,
+                                        Inventory_Vendor_id int NOT NULL,
+                                        Inventory_Vendor_item_number int NOT NULL,
+                                        Inventory_unit_cost dec(10,2) NOT NULL,
+                                        Inventory_weight dec(10,2) NOT NULL,
+                                        Inventory_size varchar(240) NOT NULL,
+                                        Inventory_color varchar(240) NOT NULL,
+                                        Inventory_unit_of_measure int NOT NULL,
+                                        Inventory_safety_stock_level int NOT NULL,
+                                        Inventory_reorder_quantity int NOT NULL,
+                                        Inventory_locator varchar(240) NOT NULL,
+                                        Inventory_created_date datetime NOT NULL,
+                                        Inventory_created_by varchar(240) NOT NULL,
+                                        Inventory_last_updated_date datetime,
+                                        Inventory_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Inventory_id )
+                                       );
+
+
+ CREATE TABLE HARRYS.Images(Images_id int NOT NULL AUTO_INCREMENT,
+                                        Images_url varchar(240) NOT NULL,
+                                        Images_created_date datetime NOT NULL,
+                                        Images_created_by varchar(240) NOT NULL,
+                                        Images_last_updated_date datetime,
+                                        Images_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Images_id )
+                                       );
+
+
+ CREATE TABLE HARRYS.General_lookup(GL_id int NOT NULL AUTO_INCREMENT,
+                                        GL_type varchar(240) NOT NULL,
+                                        GL_name varchar(240) NOT NULL,
+                                        GL_data varchar(240) NOT NULL,
+                                        GL_start_date datetime,
+                                        GL_end_date datetime,
+                                        GL_created_date datetime NOT NULL,
+                                        GL_created_by varchar(240) NOT NULL,
+                                        GL_last_updated_date datetime,
+                                        GL_last_updated_by varchar(240),
+                                        PRIMARY KEY ( GL_id )
+                                       );
+
+
+ CREATE TABLE HARRYS.Employee(Employee_id int NOT NULL AUTO_INCREMENT,
+                                        Employee_number int NOT NULL,
+                                        Employee_account_id int NOT NULL,
+                                        Employee_manager_id int NOT NULL,
+                                        Employee_status varchar(240),
+                                        Employee_start_date datetime,
+                                        Employee_end_date datetime,
+                                        Employee_privilege_id int NOT NULL,
+                                        Employee_photo_url varchar(240) NOT NULL,
+                                        Employee_position_title varchar(240) NOT NULL,
+                                        Employee_created_date datetime NOT NULL,
+                                        Employee_created_by varchar(240) NOT NULL,
+                                        Employee_last_updated datetime,
+                                        Employee_last_updated_by varchar(240),
+                                        PRIMARY KEY ( Employee_id )
+                                       );
+
+
+ CREATE TABLE HARRYS.Accounts_type(AT_id int NOT NULL AUTO_INCREMENT,
+                                        AT_type varchar(240) NOT NULL,
+                                        AT_description varchar(240) NOT NULL,
+                                        AT_start_date datetime,
+                                        AT_end_date datetime,
+                                        AT_created_date datetime NOT NULL,
+                                        AT_created_by varchar(240) NOT NULL,
+                                        AT_last_updated_date datetime,
+                                        AT_last_updated_by varchar(240),
+                                        PRIMARY KEY ( AT_id )
+                                       );
+
+
+insert into HARRYS.Order_status values(NULL,'Entered','Order is entered but not yet processed',now(),NULL,now(),'Autoloaded',NULL,NULL);
+insert into HARRYS.Order_status values(NULL,'Processed','Order is processed (filled) but not yet Shipped',now(),NULL,now(),'Autoloaded',NULL,NULL);
+insert into HARRYS.Order_status values(NULL,'Shipped','Order is Shipped but not yet Invoiced',now(),NULL,now(),'Autoloaded',NULL,NULL);
+insert into HARRYS.Order_status values(NULL,'Invoiced','Order is Invoiced but not yet Closed',now(),NULL,now(),'Autoloaded',NULL,NULL);
+insert into HARRYS.Order_status values(NULL,'Closed','Order is Completed, with no other action expected',now(),NULL,now(),'Autoloaded',NULL,NULL);
+insert into HARRYS.Order_status values(NULL,'On Hold','Order is on hold and is not to be processed',now(),NULL,now(),'Autoloaded',NULL,NULL);
+insert into HARRYS.Accounts_type values(NULL,'Customer','Customer Account',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.Accounts_type values(NULL,'Employee','Employee Account',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.Accounts_type values(NULL,'Vendor','Vendor Account',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.Accounts_type values(NULL,'Altshipto','Alternate Shipto Entry',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.Accounts_type values(NULL,'Shipto','Shipto Entry',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.Accounts_type values(NULL,'Billto','Billto Entry',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Payment Type','Credit Card','VISA',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Payment Type','Credit Card','MASTERCARD',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Payment Type','Credit Card','DISCOVERER',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Payment Type','Credit Card','AMERICAN EXPRESS',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Payment Type','Credit Card','DEBIT',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Payment Type','Non Credit Card','CASH',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Payment Type','Non Credit Card','CHECK',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Control','Order Number','000001',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Shipping Method','Shipping Method','USPS',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Shipping Method','Shipping Method','Delivery Truck',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Shipping Method','Shipping Method','FED EX',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Shipping Method','Shipping Method','UPS',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Shipping Method','Shipping Method','Customer Pickup',now(),NULL,now(),'Autoloaded',NULL,NULL);
+
+insert into HARRYS.General_lookup values(NULL,'Employee Position','Employee Position','Sales Staff',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL,'Employee Position','Employee Position','Inventory Spec',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL,'Employee Position','Employee Position','Shipper',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL,'Employee Position','Employee Position','Accountant',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL,'Employee Position','Employee Position','Manager',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL,'Employee Position','Employee Position','Security',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL,'Employee Status','Employee Status','Active',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL,'Employee Status','Employee Status','Inactive',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL, 'Shipping Cost','USPS', '12.95',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL, 'Shipping Cost','Delivery Truck', '21.95',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL, 'Shipping Cost','FED EX', '13.55',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+insert into HARRYS.General_lookup values(NULL, 'Shipping Cost','Customer Pickup', '2.95',now(),NULL,now(),'Autoloaded', now(),'Autoloaded');
+
