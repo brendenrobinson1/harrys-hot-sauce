@@ -1,10 +1,10 @@
-# Harry's Hot Sauce 🌶️
+# Harry's Hot Sauce 
 
-Harry's Hot Sauce is a full-stack PHP/MySQL e-commerce web application designed to simulate a real-world online store environment. This project demonstrates both software development skills and foundational application security practices.
+Harry's Hot Sauce is a full-stack PHP/MySQL e-commerce web application designed to simulate a real-world online store environment. This graduation capstone project demonstrates both software development skills and foundational application security practices.
 
 ---
 
-## 🔧 Features
+## Features
 
 * User registration and authentication system
 * Product catalog with dynamic database integration
@@ -14,7 +14,7 @@ Harry's Hot Sauce is a full-stack PHP/MySQL e-commerce web application designed 
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 
 * **Backend:** PHP (MySQLi procedural)
 * **Database:** MySQL
@@ -23,7 +23,7 @@ Harry's Hot Sauce is a full-stack PHP/MySQL e-commerce web application designed 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 harrys-hot-sauce/
@@ -35,7 +35,7 @@ harrys-hot-sauce/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repository:
 
@@ -55,7 +55,7 @@ harrys-hot-sauce/
 
 ---
 
-## 🔐 Security Focus
+## Security Focus
 
 This project is being extended into an application security case study.
 It includes identification and remediation of common vulnerabilities such as:
@@ -65,11 +65,11 @@ It includes identification and remediation of common vulnerabilities such as:
 * Weak password hashing
 * Session security issues
 
-📄 See: [Security Audit](docs/security-audit.md)
+See: [Security Audit](docs/security-audit.md)
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 This project is part of a professional portfolio demonstrating:
 
@@ -80,7 +80,7 @@ This project is part of a professional portfolio demonstrating:
 
 ---
 
-## 👤 Author
+## Author
 
 Brenden Robinson
 GitHub: https://github.com/brendenrobinson1
